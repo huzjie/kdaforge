@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kdaforge"
+version = "1.0.0"
+description = "KDA hybrid linear attention (Gated DeltaNet) + 896-expert sparse MoE inference engine (zero-dependency reference of Kimi K3.1)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "kdaforge contributors" }]
+keywords = ["linear-attention", "delta-net", "moe", "long-context", "llm"]
+dependencies = []
+
+[project.scripts]
+kdaforge = "kdaforge.serving.cli:main"
+
+[tool.setuptools]
+packages = ["kdaforge", "kdaforge.core", "kdaforge.attention", "kdaforge.moe",
+            "kdaforge.mopd", "kdaforge.serving", "kdaforge.backends",
+            "kdaforge.train", "kdaforge.bench", "kdaforge.utils"]

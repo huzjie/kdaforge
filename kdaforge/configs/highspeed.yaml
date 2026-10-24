@@ -1,0 +1,19 @@
+# highspeed profile: longer speculative drafts + bigger prefetch
+serving:
+  draft_len: 8
+  n_lookahead: 32
+  batch_size: 16
+  host: 127.0.0.1
+  port: 8321
+declared:
+  total_params_b: 2800.0
+  active_params_b: 104.0
+  n_experts: 896
+  top_k: 16
+  context_len: 1000000
+  n_layers: 93
+  kda_layers: 69
+  mla_layers: 24
+  terminal_bench: 65.7
+  speedup_low: 2.0
+  speedup_high: 3.0

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kdaforge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kdaforge
+  template:
+    metadata:
+      labels:
+        app: kdaforge
+    spec:
+      containers:
+        - name: kdaforge
+          image: kdaforge:1.0.0
+          ports:
+            - containerPort: 8321
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8321

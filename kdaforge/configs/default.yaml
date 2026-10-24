@@ -1,0 +1,65 @@
+# kdaforge default configuration
+# Declared scale (2.8T / 104B active / 896 experts / 1M context) is
+# informational only; the reference instantiates tiny structures.
+
+app:
+  name: kdaforge
+  version: 1.0.0
+
+attention:
+  n_layers: 6
+  kda_layers: 4
+  mla_layers: 2
+  d_model: 64
+  n_heads: 4
+  head_dim: 16
+  chunk_size: 16
+  beta_init: 0.5
+  gate: true
+
+moe:
+  n_experts: 16
+  top_k: 4
+  d_model: 64
+  expert_dim: 128
+  aux_loss_weight: 0.01
+  bias_correction: true
+
+mopd:
+  n_teachers: 4
+  n_rollouts: 32
+  temperature: 0.8
+  kl_weight: 0.5
+  advantage_clip: 1.0
+  learning_rate: 0.2
+  max_steps: 40
+
+serving:
+  draft_len: 6
+  n_lookahead: 16
+  batch_size: 8
+  host: 127.0.0.1
+  port: 8321
+
+train:
+  learning_rate: 0.2
+  max_steps: 40
+  seed: 20261024
+
+bench:
+  n_tasks: 200
+  seq_len: 64
+  seed: 20261024
+
+declared:
+  total_params_b: 2800.0
+  active_params_b: 104.0
+  n_experts: 896
+  top_k: 16
+  context_len: 1000000
+  n_layers: 93
+  kda_layers: 69
+  mla_layers: 24
+  terminal_bench: 65.7
+  speedup_low: 2.0
+  speedup_high: 3.0

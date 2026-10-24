@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kdaforge
+description: KDA hybrid linear attention + sparse MoE inference engine
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

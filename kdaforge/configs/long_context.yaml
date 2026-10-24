@@ -1,0 +1,23 @@
+# long-context profile: more KDA layers, bigger chunk, aggressive 1M window
+attention:
+  n_layers: 8
+  kda_layers: 6
+  mla_layers: 2
+  d_model: 64
+  n_heads: 4
+  head_dim: 16
+  chunk_size: 32
+  beta_init: 0.6
+  gate: true
+declared:
+  total_params_b: 2800.0
+  active_params_b: 104.0
+  n_experts: 896
+  top_k: 16
+  context_len: 1000000
+  n_layers: 93
+  kda_layers: 69
+  mla_layers: 24
+  terminal_bench: 65.7
+  speedup_low: 2.0
+  speedup_high: 3.0
